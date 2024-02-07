@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shop/pages/product_detail_page.dart';
 import 'package:shop/pages/products_overview_page.dart';
+import 'package:shop/routes/app_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +23,9 @@ class MyApp extends StatelessWidget {
         ),
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.purple,
+          iconTheme: IconThemeData(
+            color: Colors.white,
+          ),
           titleTextStyle: TextStyle(
             color: Colors.white,
             fontSize: 25,
@@ -30,6 +35,9 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Lato',
       ),
       home: ProductsOverviewPage(),
+      routes: {
+        AppRoutes.PRODUCT_DETAIL: (_) => ProductDetailPage(),
+      },
       debugShowCheckedModeBanner: false,
     );
   }
